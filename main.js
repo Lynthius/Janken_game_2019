@@ -102,6 +102,13 @@ const showResults = (player, comp, result) => {
     };
 
 };
+// Ending game function
+const endGame = () => {
+    document.querySelector(`[data-option="${game.playerHand}"]`).style.boxShadow = "";
+    game.playerHand = "";
+    game.compHand = "";
+};
+
 
 // Starting game function
 const startGame = () => {
@@ -111,6 +118,7 @@ const startGame = () => {
         const gameResult = checkResult(game.playerHand, game.compHand);
         console.log(gameResult);
         showResults(game.playerHand, game.compHand, gameResult);
+        endGame();
     } else {
         return alert("Choose your hand!");
     };

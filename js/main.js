@@ -18,47 +18,38 @@ const hands = [...document.querySelectorAll(".select-container img")];
 const input = document.querySelector("input");
 const nameBtn = document.querySelector(".name-btn");
 const playerIntr = document.querySelector(".introduction");
-const playBtn = document.querySelector(".play-btn")
+const playBtn = document.querySelector(".play-btn");
 
-// Submit your name function
 const playerNameCreator = (e) => {
   e.preventDefault();
   playerName.name = input.value;
-  console.log(playerName);
   input.value = "";
 };
 
 nameBtn.addEventListener("click", playerNameCreator)
 
-// Display chosen name in game introduction function
 const showIntroduction = () => {
   playerIntr.textContent = `Choose your destiny ${playerName.name}-san...`;
 };
 
 nameBtn.addEventListener("click", showIntroduction)
 
-// Select your hand function
 const handSelector = (e) => {
   game.playerHand = e.target.dataset.option
-  console.log(game.playerHand);
   for (const hand of hands) {
     hand.style.boxShadow = "";
   };
   e.target.style.boxShadow = "0 0 0 4px yellow";
 };
 
-for (const hand of hands) {
-  hand.addEventListener("click", handSelector);
-};
+hands.forEach(hand => hand.addEventListener("click", handSelector));
 
-//Random hand function
 const randomHand = () => {
   let randomIndex = Math.floor(Math.random() * 3);
   let randomHand = hands[randomIndex].dataset.option;
   return randomHand;
 };
 
-//Check results function
 const checkResult = (player, comp) => {
   if (player === comp) {
     ++gameSummary.games;
@@ -75,7 +66,6 @@ const checkResult = (player, comp) => {
   };
 };
 
-//Show results in HTML function
 const showResults = (player, comp, result) => {
   const playerChoice = document.querySelector('[data-summary="your-choice"]');
   playerChoice.textContent = player;
@@ -100,17 +90,14 @@ const showResults = (player, comp, result) => {
     const winner = document.querySelector('[data-summary="who-win"]');
     winner.textContent = "nobody";
   };
-
 };
-// Ending game function
+
 const endGame = () => {
   document.querySelector(`[data-option="${game.playerHand}"]`).style.boxShadow = "";
   game.playerHand = "";
   game.compHand = "";
 };
 
-
-// Starting game function
 const startGame = () => {
   if (game.playerHand) {
     game.compHand = randomHand();

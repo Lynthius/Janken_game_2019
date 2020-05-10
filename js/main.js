@@ -9,6 +9,7 @@ const gameSummary = {
   draws: 0,
   lives: 3,
   prize: 0,
+  counter: 1
 };
 
 const game = {
@@ -51,6 +52,7 @@ function randomHand() {
 };
 
 function checkResult(player, comp) {
+  checkForLives()
   if (player === comp) {
     ++gameSummary.games;
     ++gameSummary.draws;
@@ -58,12 +60,24 @@ function checkResult(player, comp) {
   } else if ((player === "paper" && comp === "rock") || (player === "rock" && comp === "scissors") || (player === "scissors" && comp === "paper")) {
     ++gameSummary.games;
     ++gameSummary.wins;
+    ++gameSummary.counter;
     gameSummary.prize += 50;
     return "win";
   } else {
     ++gameSummary.games;
     ++gameSummary.loses;
+    gameSummary.counter = 1;
+    --gameSummary.lives;
     return "lose";
+  };
+};
+
+function checkForLives() {
+  if (gameSummary.counter === 2 && gameSummary.lives !== 3) {
+    ++gameSummary.lives;
+  }
+  if (gameSummary.lives === 0) {
+    return alert("Ups, you lose!");
   };
 };
 
@@ -82,6 +96,8 @@ function showResults(player, comp, result) {
   drawNumbers.textContent = gameSummary.draws;
   const loseNumbers = document.querySelector("p.loses span");
   loseNumbers.textContent = gameSummary.loses;
+  const livesNumbers = document.querySelector("p.lives span");
+  livesNumbers.textContent = gameSummary.lives;
 
   if (result === "win") {
     const winner = document.querySelector('[data-summary="who-win"]');

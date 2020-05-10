@@ -36,9 +36,7 @@ nameBtn.addEventListener("click", showIntroduction)
 
 const handSelector = (e) => {
   game.playerHand = e.target.dataset.option
-  for (const hand of hands) {
-    hand.style.boxShadow = "";
-  };
+  hands.forEach(hand => hand.style.boxShadow = "");
   e.target.style.boxShadow = "0 0 0 4px yellow";
 };
 

@@ -7,6 +7,8 @@ const gameSummary = {
   wins: 0,
   loses: 0,
   draws: 0,
+  lives: 3,
+  prize: 0,
 };
 
 const game = {
@@ -20,7 +22,7 @@ const nameBtn = document.querySelector(".name-btn");
 const playerIntr = document.querySelector(".introduction");
 const playBtn = document.querySelector(".play-btn");
 
-const playerNameCreator = (e) => {
+function playerNameCreator(e) {
   e.preventDefault();
   playerName.name = input.value;
   input.value = "";
@@ -28,13 +30,13 @@ const playerNameCreator = (e) => {
 
 nameBtn.addEventListener("click", playerNameCreator)
 
-const showIntroduction = () => {
+function showIntroduction() {
   playerIntr.textContent = `Choose your destiny ${playerName.name}-san...`;
 };
 
 nameBtn.addEventListener("click", showIntroduction)
 
-const handSelector = (e) => {
+function handSelector(e) {
   game.playerHand = e.target.dataset.option
   hands.forEach(hand => hand.style.boxShadow = "");
   e.target.style.boxShadow = "0 0 0 4px yellow";
@@ -42,13 +44,13 @@ const handSelector = (e) => {
 
 hands.forEach(hand => hand.addEventListener("click", handSelector));
 
-const randomHand = () => {
+function randomHand() {
   let randomIndex = Math.floor(Math.random() * 3);
   let randomHand = hands[randomIndex].dataset.option;
   return randomHand;
 };
 
-const checkResult = (player, comp) => {
+function checkResult(player, comp) {
   if (player === comp) {
     ++gameSummary.games;
     ++gameSummary.draws;
@@ -56,6 +58,7 @@ const checkResult = (player, comp) => {
   } else if ((player === "paper" && comp === "rock") || (player === "rock" && comp === "scissors") || (player === "scissors" && comp === "paper")) {
     ++gameSummary.games;
     ++gameSummary.wins;
+    gameSummary.prize += 50;
     return "win";
   } else {
     ++gameSummary.games;
@@ -64,7 +67,7 @@ const checkResult = (player, comp) => {
   };
 };
 
-const showResults = (player, comp, result) => {
+function showResults(player, comp, result) {
   const playerChoice = document.querySelector('[data-summary="your-choice"]');
   playerChoice.textContent = player;
   const compChoice = document.querySelector('[data-summary="cp-choice"]');
@@ -73,6 +76,8 @@ const showResults = (player, comp, result) => {
   gameNumbers.textContent = gameSummary.games;
   const winNumbers = document.querySelector("p.wins span");
   winNumbers.textContent = gameSummary.wins;
+  const prizeNumbers = document.querySelector("p.prize span");
+  prizeNumbers.textContent = gameSummary.prize;
   const drawNumbers = document.querySelector("p.draws span");
   drawNumbers.textContent = gameSummary.draws;
   const loseNumbers = document.querySelector("p.loses span");
@@ -90,18 +95,16 @@ const showResults = (player, comp, result) => {
   };
 };
 
-const endGame = () => {
+function endGame() {
   document.querySelector(`[data-option="${game.playerHand}"]`).style.boxShadow = "";
   game.playerHand = "";
   game.compHand = "";
 };
 
-const startGame = () => {
+function startGame() {
   if (game.playerHand) {
     game.compHand = randomHand();
-    console.log(game.compHand);
     const gameResult = checkResult(game.playerHand, game.compHand);
-    console.log(gameResult);
     showResults(game.playerHand, game.compHand, gameResult);
     endGame();
   } else {

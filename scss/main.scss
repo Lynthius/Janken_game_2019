@@ -17,6 +17,16 @@ html {
   box-sizing: inherit;
 }
 
+@keyframes appear {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 100%;
+  }
+}
+
 body {
   padding: 0;
   margin: 0;
@@ -38,7 +48,12 @@ h2 {
 
 p {
   // line-height: 3rem;
-  letter-spacing: 0.02rem;
+  font-family: Noto Serif JP;
+  font-weight: 300;
+  font-size: 1.2rem;
+  line-height: 3.2rem;
+  letter-spacing: 0.08em;
+  margin: 0;
 }
 
 a {
@@ -53,7 +68,7 @@ a {
 .wrapper {
   display: flex;
   flex-direction: column;
-  padding: 0 2.2rem;
+  margin: 0 2.2rem;
 }
 
 .header {
@@ -66,7 +81,7 @@ a {
     // border: 1px solid magenta;
     margin-bottom: .5rem;
   }
-  
+
   &__paragraph {
     font-family: adobe-jenson-pro-display, serif;
     font-weight: 300;
@@ -75,10 +90,61 @@ a {
     letter-spacing: 0.08em;
     // border: 1px solid magenta;
   }
+
+  .instruction-container {
+    display: none;
+    animation-name: appear;
+    animation-duration: 1.5s;
+    text-align: center;
+    // border: 1px red solid;
+
+    &__header {
+      font-family: Noto Serif JP;
+      font-style: normal;
+      font-weight: 600;
+      font-size: 1.4rem;
+      letter-spacing: 0.08em;
+      margin-top: 2rem;
+    }
+
+    & input {
+      min-width: 26.6rem;
+      height: 3.6rem;
+      padding: 1rem;
+      background: #FFFFFF;
+      color: #999999;
+      letter-spacing: 0.08em;
+      border: 1px solid #9A908B;
+    }
+
+    & div {
+      margin: 1.5rem 3.5rem 10rem 3.5rem;
+    }
+
+    & p {
+      text-align: left;
+    }
+  }
 }
 
 // @media only screen and (min-width: 992px) {
 // }
+
+.game-container {
+  // display: none;
+  animation-name: appear;
+  animation-duration: 1.5s;
+
+  &__header {
+    text-align: center;
+    font-family: Noto Serif JP;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 1.4rem;
+    letter-spacing: 0.08em;
+    margin-top: 2rem;
+  }
+}
 
 .select {
   display: flex;
@@ -90,15 +156,17 @@ a {
     margin: 0 1rem;
 
     &__image {
-      
+
       &--rock {
         border: 1px solid #9791A8;
         box-shadow: 0px 0px 30px rgba(151, 145, 168, 0.25);
       }
+
       &--paper {
         border: 1px solid #948D8B;
         box-shadow: 0px 0px 30px rgba(151, 144, 142, 0.25);
       }
+
       &--scissors {
         border: 1px solid #DF6A6F;
         box-shadow: 0px 0px 30px rgba(226, 125, 128, 0.25);
@@ -117,4 +185,21 @@ a {
   height: 36px;
   background: #FFFFFF;
   border: 1px solid #9A908B;
+}
+
+.statistics {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 2.2rem 2.2rem 1rem 2.2rem;
+  background: linear-gradient(360deg, #E5E5E5 75%, rgba(239, 243, 239, 0) 100%);
+
+  & p {
+    font-size: 1.4rem;
+  }
+
+  & span {
+    font-weight: 600;
+  }
 }

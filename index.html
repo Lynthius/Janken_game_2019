@@ -17,50 +17,62 @@
 		<header class="header">
 			<img src="/img/header.png" alt="" class="header__image">
 			<h1 class="header__title">Janken</h1>
-			<p class="header__paragraph">- rock, paper, scissors</p>
-			<form class="header__introduction">
-				<h2>What is your name?</h2>
-				<label>My name is </label><input type="text"><button class="name-btn">submit</button>
-			</form>
-			<h3 class="introduction"></h3>
+			<p class="header__paragraph">- rock, paper, scissors game</p>
+			<section class="instruction-container">
+				<h2 class="instruction-container__header">What is your name?</h2>
+				<input type="text" placeholder="名前は ・・・">
+				<h2>Instruction:</h2>
+				<div>
+					<p>When playing Janken:</p>
+					<p>グー (Guu) beats チョキ(Choki),</p>
+					<p>チョキ(Choki) beats パー (Paa)</p>
+					<p>and パー (Paa) beats グー(Guu).</p>
+					<p>When it is a draw, it is called あいこ(Aiko).</p>
+					<p>If you win - you get 50¥ from Sachiko.</p>
+					<p>Two wins in a row - you get a heart.</p>
+				</div>
+			</section>
 		</header>
 
-		<div class="select">
-			<div class="select-box">
-				<img data-option="rock" class="select-box__image--rock" src="/img/imgrock.svg" alt="" title="">
-				<p class="select-box__name">グー</p>
+		<section class="game-container">
+			<h2 class="game-container__header">Choose your destiny, Tomasz-san.</h2>
+			<div class="select">
+				<div class="select-box">
+					<img data-option="rock" class="select-box__image--rock" src="/img/imgrock.svg" alt="" title="">
+					<p class="select-box__name">グー</p>
+				</div>
+				<div class="select-box">
+					<img data-option="paper" class="select-box__image--paper" src="img/imgpaper.svg" alt="" title="">
+					<p class="select-box__name">パー</p>
+				</div>
+				<div class="select-box">
+					<img data-option="scissors" class="select-box__image--scissors" src="img/imgscissors.svg" alt="" title="">
+					<p class="select-box__name">チョキ</p>
+				</div>
 			</div>
-			<div class="select-box">
-				<img data-option="paper" class="select-box__image--paper" src="img/imgpaper.svg" alt="" title="">
-				<p class="select-box__name">パー</p>
-			</div>
-			<div class="select-box">
-				<img data-option="scissors" class="select-box__image--scissors" src="img/imgscissors.svg" alt="" title="">
-				<p class="select-box__name">チョキ</p>
-			</div>
-		</div>
-		<button class="play-btn">Let's play!</button>
+			<button class="play-btn">Let's play!</button>
 
-		<div class="results-container">
-			<h3 class="results-container__header">Game result</h3>
-			<p>Your choice <span data-summary="your-choice"></span></p>
-			<p>Computer choice <span data-summary="cp-choice"></span></p>
-			<p>The winner is <span data-summary="who-win"></span></p>
-		</div>
+			<div class="results-container">
+				<h3 class="results-container__header">Game result:</h3>
+				<p>Your choice: <span data-summary="your-choice"></span></p>
+				<p>Computer choice: <span data-summary="cp-choice"></span></p>
+				<p>The winner is: <span data-summary="who-win"></span></p>
+			</div>
 
-		<div class="scores-container">
-			<h3 class="scores-container__header">Game scores</h3>
-			<p class="games">Number of games: <span>0</span></p>
-			<p class="wins">Wins: <span>0</span></p>
-			<p class="loses">Loses: <span>0</span></p>
-			<p class="draws">Draws: <span>0</span></p>
-		</div>
+			<div class="scores-container">
+				<h3 class="scores-container__header">Game scores</h3>
+				<p class="games">Number of games: <span>0</span></p>
+				<p class="wins">Wins: <span>0</span></p>
+				<p class="loses">Loses: <span>0</span></p>
+				<p class="draws">Draws: <span>0</span></p>
+			</div>
 	</div>
+	</section>
 
-	<div class="statistics">
+	<footer class="statistics">
 		<p class="prize">Prize: <span>0</span> ¥</p>
 		<p class="lives">Lives: <span>3</span> ❤</p>
-	</div>
+	</footer>
 
 	<script src="./js/main.js"></script>
 </body>

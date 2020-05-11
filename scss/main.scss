@@ -78,7 +78,6 @@ a {
 
   &__title {
     font-size: 3.6rem;
-    // border: 1px solid magenta;
     margin-bottom: .5rem;
   }
 
@@ -88,15 +87,12 @@ a {
     font-size: 1.8rem;
     margin-top: .5rem;
     letter-spacing: 0.08em;
-    // border: 1px solid magenta;
   }
 
   .instruction-section {
-    // display: none;
     animation-name: appear;
     animation-duration: 1.5s;
     text-align: center;
-    // border: 1px red solid;
 
     &__header {
       font-family: Noto Serif JP;
@@ -104,7 +100,6 @@ a {
       font-weight: 600;
       font-size: 1.4rem;
       letter-spacing: 0.08em;
-      margin-top: 2rem;
     }
 
     & input {
@@ -115,10 +110,7 @@ a {
       color: #999999;
       letter-spacing: 0.08em;
       border: 1px solid #9A908B;
-    }
-
-    & div {
-      margin: 1.5rem 3.5rem 10rem 3.5rem;
+      margin: 1rem 0;
     }
 
     & p {
@@ -150,7 +142,6 @@ a {
   display: flex;
   flex-direction: row;
   justify-content: center;
-  // border: 1px solid salmon;
   padding: 1rem 0;
 
   &-box {
@@ -192,14 +183,12 @@ a {
 }
 
 .results {
-  // display: none;
   animation-name: appear;
   animation-duration: 1.5s;
   margin-bottom: 10rem;
 }
 
 .scores {
-  display: none;
   animation-name: appear;
   animation-duration: 1.5s;
   margin-bottom: 10rem;
@@ -215,7 +204,7 @@ a {
     white-space: nowrap;
 
     &:after {
-      content: " ....................................................................................................."
+      content: " ......................................................................................................................................................................................................................"
     }
 
     &__value {
@@ -225,8 +214,10 @@ a {
 }
 
 .statistics-footer {
+  display: none;
   position: fixed;
-  display: flex;
+  animation-name: appear;
+  animation-duration: 1.5s;
   justify-content: space-between;
   align-items: flex-end;
   bottom: 0;

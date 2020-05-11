@@ -80,8 +80,7 @@ a {
     font-style: normal;
     font-weight: 600;
     font-size: 1.4rem;
-    letter-spacing: 0.08em;
-    margin-top: 2rem; }
+    letter-spacing: 0.08em; }
   .header .instruction-section input {
     min-width: 26.6rem;
     height: 3.6rem;
@@ -89,9 +88,8 @@ a {
     background: #FFFFFF;
     color: #999999;
     letter-spacing: 0.08em;
-    border: 1px solid #9A908B; }
-  .header .instruction-section div {
-    margin: 1.5rem 3.5rem 10rem 3.5rem; }
+    border: 1px solid #9A908B;
+    margin: 1rem 0; }
   .header .instruction-section p {
     text-align: left; }
 
@@ -144,7 +142,6 @@ a {
   margin-bottom: 10rem; }
 
 .scores {
-  display: none;
   animation-name: appear;
   animation-duration: 1.5s;
   margin-bottom: 10rem; }
@@ -157,13 +154,15 @@ a {
     text-overflow: ellipsis;
     white-space: nowrap; }
     .item__filler:after {
-      content: " ....................................................................................................."; }
+      content: " ......................................................................................................................................................................................................................"; }
     .item__filler__value {
       flex-shrink: 0; }
 
 .statistics-footer {
+  display: none;
   position: fixed;
-  display: flex;
+  animation-name: appear;
+  animation-duration: 1.5s;
   justify-content: space-between;
   align-items: flex-end;
   bottom: 0;

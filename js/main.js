@@ -17,13 +17,17 @@ const game = {
   compHand: "",
 };
 
-const hands = [...document.querySelectorAll(".select img")];
+const hands = [...document.querySelectorAll(".select-box img")];
 const input = document.querySelector("input");
 const nameBtn = document.querySelector(".name-btn");
 const playerIntr = document.querySelector(".game-section__header");
 const playBtn = document.querySelector(".play-btn");
 const instructionSection = document.querySelector(".instruction-section");
 const gameSection = document.querySelector(".game-section");
+const statSection = document.querySelector(".statistics-footer")
+const resultsSection = document.querySelector(".results")
+const scoreSection = document.querySelector(".scores")
+const scoresBtn = document.querySelector(".scores-activator");
 
 function playerNameCreator(e) {
   e.preventDefault();
@@ -37,9 +41,24 @@ function showIntroduction() {
   playerIntr.textContent = `Choose your destiny ${playerName.name}-san...`;
   instructionSection.style.display = "none";
   gameSection.style.display = "block";
+  statSection.style.display = "flex";
 };
 
 instructionSection.addEventListener("submit", showIntroduction)
+
+function showGameScores() {
+  if (resultsSection.style.display === "block") {
+    resultsSection.style.display = "none";
+    scoreSection.style.display = "block";
+    scoresBtn.textContent = "Game results >";
+  } else {
+    resultsSection.style.display = "block";
+    scoreSection.style.display = "none";
+    scoresBtn.textContent = "Game scores >";
+  };
+};
+
+scoresBtn.addEventListener("click", showGameScores);
 
 function handSelector(e) {
   game.playerHand = e.target.dataset.option
@@ -90,17 +109,17 @@ function showResults(player, comp, result) {
   playerChoice.textContent = player;
   const compChoice = document.querySelector('[data-summary="cp-choice"]');
   compChoice.textContent = comp;
-  const gameNumbers = document.querySelector("p.games span");
+  const gameNumbers = document.querySelector('[data-option="games"]');
   gameNumbers.textContent = gameSummary.games;
-  const winNumbers = document.querySelector("p.wins span");
+  const winNumbers = document.querySelector('[data-option="wins"]');
   winNumbers.textContent = gameSummary.wins;
-  const prizeNumbers = document.querySelector("p.prize span");
-  prizeNumbers.textContent = gameSummary.prize;
-  const drawNumbers = document.querySelector("p.draws span");
+  const drawNumbers = document.querySelector('[data-option="draws"]');
   drawNumbers.textContent = gameSummary.draws;
-  const loseNumbers = document.querySelector("p.loses span");
+  const loseNumbers = document.querySelector('[data-option="loses"]');
   loseNumbers.textContent = gameSummary.loses;
-  const livesNumbers = document.querySelector("p.lives span");
+  const prizeNumbers = document.querySelector('[data-option="prize"]');
+  prizeNumbers.textContent = gameSummary.prize;
+  const livesNumbers = document.querySelector('[data-option="lives"]');
   livesNumbers.textContent = gameSummary.lives;
 
   if (result === "win") {
@@ -108,7 +127,7 @@ function showResults(player, comp, result) {
     winner.textContent = `${playerName.name}-san`;
   } else if (result === "lose") {
     const winner = document.querySelector('[data-summary="who-win"]');
-    winner.textContent = "Computer-san";
+    winner.textContent = "Sachiko";
   } else {
     const winner = document.querySelector('[data-summary="who-win"]');
     winner.textContent = "nobody";
@@ -116,7 +135,7 @@ function showResults(player, comp, result) {
 };
 
 function endGame() {
-  document.querySelector(`[data-option="${game.playerHand}"]`).style.boxShadow = "";
+  document.querySelector(`[data-option="${game.playerHand}"]`).className = "select-box__image";
   game.playerHand = "";
   game.compHand = "";
 };

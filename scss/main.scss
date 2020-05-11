@@ -68,7 +68,7 @@ a {
 .wrapper {
   display: flex;
   flex-direction: column;
-  margin: 0 2.2rem;
+  margin: 2.2rem 2.2rem 0;
 }
 
 .header {
@@ -143,25 +143,32 @@ a {
 .select {
   display: flex;
   flex-direction: row;
+  align-items: center;
   justify-content: center;
-  padding: 1.5rem 0;
+  min-height: 16rem;
+  padding: 1rem 0 0 0;
 
   &-box {
     margin: 0 1rem;
     cursor: pointer;
 
     &__image {
+      max-width: 8.6rem;
+
       &--rock {
+        max-width: 8.6rem;
         border: 1px solid #9791A8;
         box-shadow: 0px 0px 30px rgba(151, 145, 168, 0.25);
       }
 
       &--paper {
+        max-width: 8.6rem;
         border: 1px solid #948D8B;
         box-shadow: 0px 0px 30px rgba(151, 144, 142, 0.25);
       }
 
       &--scissors {
+        max-width: 8.6rem;
         border: 1px solid #DF6A6F;
         box-shadow: 0px 0px 30px rgba(226, 125, 128, 0.25);
       }
@@ -253,7 +260,7 @@ a {
   }
 
   &__heart {
-    padding-left: .5rem;
+    padding-left: .2rem;
   }
 
   &__button {

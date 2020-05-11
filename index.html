@@ -56,34 +56,34 @@
 				<h3 class="results__header">Game results:</h3>
 				<div class="item">
 					<p class="item__filler">The winner is: </p>
-					<p class="item__value"><span data-summary="who-win">nobody</span></p>
+					<p class="item__value"><strong><span data-summary="who-win">nobody</span></strong></p>
 				</div>
 				<div class="item">
 					<p class="item__filler">Your choice: </p>
-					<p class="item__value"><span data-summary="your-choice">none</span></p>
+					<p class="item__value"><strong><span data-summary="your-choice">none</span></strong></p>
 				</div>
 				<div class="item">
 					<p class="item__filler">Computer choice: </p>
-					<p class="item__value"><span data-summary="cp-choice">none</span></p>
+					<p class="item__value"><strong><span data-summary="cp-choice">none</span></strong></p>
 				</div>
 			</div>
 			<div class="scores" style="display:none;">
 				<h3 class="scores__header">Game scores</h3>
 				<div class="item">
 					<p class="games item__filler">Number of games: </p>
-					<p class="item__value"><span data-option="games">0</span></p>
+					<p class="item__value"><strong><span data-option="games">0</span></strong></p>
 				</div>
 				<div class="item">
 					<p class="wins item__filler">Wins: </p>
-					<p class="item__value"><span data-option="wins">0</span></p>
+					<p class="item__value"><strong><span data-option="wins">0</span></strong></p>
 				</div>
 				<div class="item">
 					<p class="loses item__filler">Loses: </p>
-					<p class="item__value"><span data-option="loses">0</span></p>
+					<p class="item__value"><strong><span data-option="loses">0</span></strong></p>
 				</div>
 				<div class="item">
 					<p class="draws item__filler">Draws: </p>
-					<p class="item__value"><span data-option="draws">0</span></p>
+					<p class="item__value"><strong><span data-option="draws">0</span></strong></p>
 				</div>
 			</div>
 	</div>
@@ -101,9 +101,11 @@
 			<p class="statistics__prize">Prize: <span data-option="prize">0</span> ¥</p>
 			<div class="statistics__lives">
 				<p>Lives: <span data-option="lives">3</span></p>
-				<span><img src="./img/heart.svg" alt="" class="statistics__heart"></span>
-				<span><img src="./img/heart.svg" alt="" class="statistics__heart"></span>
-				<span><img src="./img/heart.svg" alt="" class="statistics__heart"></span>
+				<div class="hearts">
+					<span data-option="one-heart"><img src="./img/heart.svg" alt="" class="statistics__heart"></span>
+					<span data-option="two-heart"><img src="./img/heart.svg" alt="" class="statistics__heart"></span>
+					<span data-option="three-heart"><img src="./img/heart.svg" alt="" class="statistics__heart"></span>
+				</div>
 			</div>
 		</div>
 		<button class="statistics__button">Game scores &gt;</button>

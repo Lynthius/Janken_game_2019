@@ -28,6 +28,7 @@ const statSection = document.querySelector(".statistics-footer")
 const resultsSection = document.querySelector(".results")
 const scoreSection = document.querySelector(".scores")
 const scoresBtn = document.querySelector(".statistics__button");
+const heartsContainer = document.querySelector(".hearts");
 
 function playerNameCreator(e) {
   e.preventDefault();
@@ -91,6 +92,8 @@ function checkResult(player, comp) {
     ++gameSummary.loses;
     gameSummary.counter = 1;
     --gameSummary.lives;
+    const heart = document.querySelector(".statistics__heart");
+    heart.parentNode.removeChild(heart);
     return "lose";
   };
 };
@@ -98,6 +101,10 @@ function checkResult(player, comp) {
 function checkForLives() {
   if (gameSummary.counter === 2 && gameSummary.lives !== 3) {
     ++gameSummary.lives;
+    const heart = document.createElement('img');
+    heart.src = "./img/heart.svg";
+    heart.classList.add("statistics__heart");
+    heartsContainer.appendChild(heart);
   }
   if (gameSummary.lives === 0) {
     return alert("Ups, you lose!");
@@ -124,7 +131,7 @@ function showResults(player, comp, result) {
 
   if (result === "win") {
     const winner = document.querySelector('[data-summary="who-win"]');
-    winner.textContent = `${playerName.name}-san`;
+    winner.textContent = `${playerName.name}`;
   } else if (result === "lose") {
     const winner = document.querySelector('[data-summary="who-win"]');
     winner.textContent = "Sachiko";

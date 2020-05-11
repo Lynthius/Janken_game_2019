@@ -72,7 +72,6 @@ a {
   letter-spacing: 0.08em; }
 
 .header .instruction-section {
-  display: none;
   animation-name: appear;
   animation-duration: 1.5s;
   text-align: center; }
@@ -97,6 +96,7 @@ a {
     text-align: left; }
 
 .game-section {
+  display: none;
   animation-name: appear;
   animation-duration: 1.5s; }
   .game-section__header {

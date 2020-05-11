@@ -20,8 +20,10 @@ const game = {
 const hands = [...document.querySelectorAll(".select img")];
 const input = document.querySelector("input");
 const nameBtn = document.querySelector(".name-btn");
-const playerIntr = document.querySelector(".introduction");
+const playerIntr = document.querySelector(".game-section__header");
 const playBtn = document.querySelector(".play-btn");
+const instructionSection = document.querySelector(".instruction-section");
+const gameSection = document.querySelector(".game-section");
 
 function playerNameCreator(e) {
   e.preventDefault();
@@ -29,13 +31,15 @@ function playerNameCreator(e) {
   input.value = "";
 };
 
-input.addEventListener("submit", playerNameCreator)
+instructionSection.addEventListener("submit", playerNameCreator)
 
 function showIntroduction() {
   playerIntr.textContent = `Choose your destiny ${playerName.name}-san...`;
+  instructionSection.style.display = "none";
+  gameSection.style.display = "block";
 };
 
-input.addEventListener("submit", showIntroduction)
+instructionSection.addEventListener("submit", showIntroduction)
 
 function handSelector(e) {
   game.playerHand = e.target.dataset.option

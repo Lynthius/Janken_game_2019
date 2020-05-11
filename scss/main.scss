@@ -92,7 +92,7 @@ a {
   }
 
   .instruction-section {
-    display: none;
+    // display: none;
     animation-name: appear;
     animation-duration: 1.5s;
     text-align: center;
@@ -131,7 +131,7 @@ a {
 // }
 
 .game-section {
-  // display: none;
+  display: none;
   animation-name: appear;
   animation-duration: 1.5s;
 

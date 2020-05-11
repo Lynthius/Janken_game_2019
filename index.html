@@ -7,39 +7,61 @@
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
 	<title>Rock - Paper - Scissors</title>
 	<link rel="stylesheet" href="./css/main.css">
+	<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@300;400;500;600&display=swap"
+		rel="stylesheet">
+	<link rel="stylesheet" href="https://use.typekit.net/mpk2mmg.css">
 </head>
 
 <body>
-	<header>
-		<h1>Janken Game - rock, paper, scissors</h1>
-	</header>
-	<form>
-		<h2>What is your name?</h2>
-		<label>My name is </label><input type="text"><button class="name-btn">submit</button>
-	</form>
-	<div class="select-container">
-		<h3 class="introduction"></h3>
-		<img data-option="rock" class="" src="img/paper.jpg" alt="" title="">
-		<img data-option="paper" class="" src="img/paper.jpg" alt="" title="">
-		<img data-option="scissors" class="" src="img/paper.jpg" alt="" title="">
+	<div class="wrapper">
+		<header class="header">
+			<img src="/img/header.png" alt="" class="header__image">
+			<h1 class="header__title">Janken</h1>
+			<p class="header__paragraph">- rock, paper, scissors</p>
+			<form class="header__introduction">
+				<h2>What is your name?</h2>
+				<label>My name is </label><input type="text"><button class="name-btn">submit</button>
+			</form>
+			<h3 class="introduction"></h3>
+		</header>
+
+		<div class="select">
+			<div class="select-box">
+				<img data-option="rock" class="select-box__image--rock" src="/img/imgrock.svg" alt="" title="">
+				<p class="select-box__name">グー</p>
+			</div>
+			<div class="select-box">
+				<img data-option="paper" class="select-box__image--paper" src="img/imgpaper.svg" alt="" title="">
+				<p class="select-box__name">パー</p>
+			</div>
+			<div class="select-box">
+				<img data-option="scissors" class="select-box__image--scissors" src="img/imgscissors.svg" alt="" title="">
+				<p class="select-box__name">チョキ</p>
+			</div>
+		</div>
+		<button class="play-btn">Let's play!</button>
+
+		<div class="results-container">
+			<h3 class="results-container__header">Game result</h3>
+			<p>Your choice <span data-summary="your-choice"></span></p>
+			<p>Computer choice <span data-summary="cp-choice"></span></p>
+			<p>The winner is <span data-summary="who-win"></span></p>
+		</div>
+
+		<div class="scores-container">
+			<h3 class="scores-container__header">Game scores</h3>
+			<p class="games">Number of games: <span>0</span></p>
+			<p class="wins">Wins: <span>0</span></p>
+			<p class="loses">Loses: <span>0</span></p>
+			<p class="draws">Draws: <span>0</span></p>
+		</div>
 	</div>
-	<button class="play-btn">Let's play!</button>
-	<div class="results-container">
-		<h3>Game result</h3>
-		<p>Your choice <span data-summary="your-choice"></span></p>
-		<p>Computer choice <span data-summary="cp-choice"></span></p>
-		<p>The winner is <span data-summary="who-win"></span></p>
-	</div>
-	<div class="scores-container">
-		<h3>Game scores</h3>
-		<p class="games">Number of games: <span>0</span></p>
-		<p class="wins">Wins: <span>0</span></p>
-		<p class="loses">Loses: <span>0</span></p>
-		<p class="draws">Draws: <span>0</span></p>
+
+	<div class="statistics">
 		<p class="prize">Prize: <span>0</span> ¥</p>
 		<p class="lives">Lives: <span>3</span> ❤</p>
 	</div>
-	<footer></footer>
+
 	<script src="./js/main.js"></script>
 </body>
 

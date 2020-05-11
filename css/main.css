@@ -71,19 +71,19 @@ a {
   margin-top: .5rem;
   letter-spacing: 0.08em; }
 
-.header .instruction-container {
+.header .instruction-section {
   display: none;
   animation-name: appear;
   animation-duration: 1.5s;
   text-align: center; }
-  .header .instruction-container__header {
+  .header .instruction-section__header {
     font-family: Noto Serif JP;
     font-style: normal;
     font-weight: 600;
     font-size: 1.4rem;
     letter-spacing: 0.08em;
     margin-top: 2rem; }
-  .header .instruction-container input {
+  .header .instruction-section input {
     min-width: 26.6rem;
     height: 3.6rem;
     padding: 1rem;
@@ -91,15 +91,15 @@ a {
     color: #999999;
     letter-spacing: 0.08em;
     border: 1px solid #9A908B; }
-  .header .instruction-container div {
+  .header .instruction-section div {
     margin: 1.5rem 3.5rem 10rem 3.5rem; }
-  .header .instruction-container p {
+  .header .instruction-section p {
     text-align: left; }
 
-.game-container {
+.game-section {
   animation-name: appear;
   animation-duration: 1.5s; }
-  .game-container__header {
+  .game-section__header {
     text-align: center;
     font-family: Noto Serif JP;
     font-style: normal;
@@ -128,9 +128,6 @@ a {
       text-align: center;
       font-size: 1.8rem; }
 
-.select-box__active {
-  border: 1px solid #DF6A6F; }
-
 .play-btn {
   position: relative;
   margin: 1rem auto;
@@ -141,14 +138,58 @@ a {
   background: #FFFFFF;
   border: 1px solid #9A908B; }
 
-.statistics {
+.results {
+  animation-name: appear;
+  animation-duration: 1.5s;
+  margin-bottom: 10rem; }
+
+.scores {
+  display: none;
+  animation-name: appear;
+  animation-duration: 1.5s;
+  margin-bottom: 10rem; }
+
+.item {
+  display: flex;
+  justify-content: space-between; }
+  .item__filler {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap; }
+    .item__filler:after {
+      content: " ....................................................................................................."; }
+    .item__filler__value {
+      flex-shrink: 0; }
+
+.statistics-footer {
   position: fixed;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
   bottom: 0;
   left: 0;
   width: 100%;
   padding: 2.2rem 2.2rem 1rem 2.2rem;
   background: linear-gradient(360deg, #E5E5E5 75%, rgba(239, 243, 239, 0) 100%); }
-  .statistics p {
-    font-size: 1.4rem; }
-  .statistics span {
-    font-weight: 600; }
+  .statistics-footer button {
+    font-family: Noto Serif JP;
+    font-size: 1.4rem;
+    font-weight: normal;
+    font-size: 1.2rem;
+    letter-spacing: 0.08em;
+    text-decoration-line: underline;
+    padding-bottom: .5rem;
+    background-color: transparent;
+    border: none; }
+
+.statistics p {
+  font-size: 1.4rem; }
+
+.statistics span {
+  font-weight: 600; }
+
+.statistics__lives {
+  display: flex;
+  align-items: center; }
+  .statistics__lives p {
+    display: inline-block; }

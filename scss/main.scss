@@ -91,7 +91,7 @@ a {
     // border: 1px solid magenta;
   }
 
-  .instruction-container {
+  .instruction-section {
     display: none;
     animation-name: appear;
     animation-duration: 1.5s;
@@ -130,7 +130,7 @@ a {
 // @media only screen and (min-width: 992px) {
 // }
 
-.game-container {
+.game-section {
   // display: none;
   animation-name: appear;
   animation-duration: 1.5s;
@@ -157,20 +157,19 @@ a {
     margin: 0 1rem;
 
     &__image {
-
       &--rock {
-          border: 1px solid #9791A8;
-          box-shadow: 0px 0px 30px rgba(151, 145, 168, 0.25);
+        border: 1px solid #9791A8;
+        box-shadow: 0px 0px 30px rgba(151, 145, 168, 0.25);
       }
 
       &--paper {
-          border: 1px solid #948D8B;
-          box-shadow: 0px 0px 30px rgba(151, 144, 142, 0.25);
+        border: 1px solid #948D8B;
+        box-shadow: 0px 0px 30px rgba(151, 144, 142, 0.25);
       }
 
       &--scissors {
-          border: 1px solid #DF6A6F;
-          box-shadow: 0px 0px 30px rgba(226, 125, 128, 0.25);
+        border: 1px solid #DF6A6F;
+        box-shadow: 0px 0px 30px rgba(226, 125, 128, 0.25);
       }
     }
 
@@ -179,10 +178,6 @@ a {
       font-size: 1.8rem;
     }
   }
-}
-
-.select-box__active {
-  border: 1px solid #DF6A6F;
 }
 
 .play-btn {
@@ -196,19 +191,78 @@ a {
   border: 1px solid #9A908B;
 }
 
-.statistics {
+.results {
+  // display: none;
+  animation-name: appear;
+  animation-duration: 1.5s;
+  margin-bottom: 10rem;
+}
+
+.scores {
+  display: none;
+  animation-name: appear;
+  animation-duration: 1.5s;
+  margin-bottom: 10rem;
+}
+
+.item {
+  display: flex;
+  justify-content: space-between;
+
+  &__filler {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+
+    &:after {
+      content: " ....................................................................................................."
+    }
+
+    &__value {
+      flex-shrink: 0;
+    }
+  }
+}
+
+.statistics-footer {
   position: fixed;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
   bottom: 0;
   left: 0;
   width: 100%;
   padding: 2.2rem 2.2rem 1rem 2.2rem;
   background: linear-gradient(360deg, #E5E5E5 75%, rgba(239, 243, 239, 0) 100%);
 
+  & button {
+    font-family: Noto Serif JP;
+    font-size: 1.4rem;
+    font-weight: normal;
+    font-size: 1.2rem;
+    letter-spacing: 0.08em;
+    text-decoration-line: underline;
+    padding-bottom: .5rem;
+    background-color: transparent;
+    border: none;
+  }
+}
+
+.statistics {
   & p {
     font-size: 1.4rem;
   }
 
   & span {
     font-weight: 600;
+  }
+
+  &__lives {
+    display: flex;
+    align-items: center;
+
+    & p {
+      display: inline-block;
+    }
   }
 }

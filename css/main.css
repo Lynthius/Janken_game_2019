@@ -111,7 +111,8 @@ a {
 .select {
   display: flex;
   flex-direction: row;
-  justify-content: center; }
+  justify-content: center;
+  padding: 1rem 0; }
   .select-box {
     margin: 0 1rem; }
     .select-box__image--rock {
@@ -124,10 +125,17 @@ a {
       border: 1px solid #DF6A6F;
       box-shadow: 0px 0px 30px rgba(226, 125, 128, 0.25); }
     .select-box__name {
-      text-align: center; }
+      text-align: center;
+      font-size: 1.8rem; }
+
+.select-box__active {
+  border: 1px solid #DF6A6F; }
 
 .play-btn {
-  align-self: center;
+  position: relative;
+  margin: 1rem auto;
+  left: 50%;
+  transform: translateX(-50%);
   width: 136px;
   height: 36px;
   background: #FFFFFF;

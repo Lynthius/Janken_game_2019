@@ -76,30 +76,33 @@ function randomHand() {
 };
 
 function checkResult(player, comp) {
-  checkForLives()
   if (player === comp) {
+    gameSummary.counter = 1;
     ++gameSummary.games;
     ++gameSummary.draws;
+    checkForLives()
     return "draw";
   } else if ((player === "paper" && comp === "rock") || (player === "rock" && comp === "scissors") || (player === "scissors" && comp === "paper")) {
+    gameSummary.counter++;
     ++gameSummary.games;
     ++gameSummary.wins;
-    ++gameSummary.counter;
     gameSummary.prize += 50;
+    checkForLives()
     return "win";
   } else {
+    gameSummary.counter = 1;
     ++gameSummary.games;
     ++gameSummary.loses;
-    gameSummary.counter = 1;
-    --gameSummary.lives;
+    gameSummary.lives--;
     const heart = document.querySelector(".statistics__heart");
     heart.parentNode.removeChild(heart);
+    checkForLives()
     return "lose";
   };
 };
 
 function checkForLives() {
-  if (gameSummary.counter === 2 && gameSummary.lives !== 3) {
+  if (gameSummary.counter === 3 && gameSummary.lives < 3) {
     ++gameSummary.lives;
     const heart = document.createElement('img');
     heart.src = "./img/heart.svg";
@@ -126,8 +129,6 @@ function showResults(player, comp, result) {
   loseNumbers.textContent = gameSummary.loses;
   const prizeNumbers = document.querySelector('[data-option="prize"]');
   prizeNumbers.textContent = gameSummary.prize;
-  const livesNumbers = document.querySelector('[data-option="lives"]');
-  livesNumbers.textContent = gameSummary.lives;
 
   if (result === "win") {
     const winner = document.querySelector('[data-summary="who-win"]');

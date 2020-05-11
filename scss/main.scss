@@ -90,6 +90,7 @@ a {
   }
 
   .instruction-section {
+    // display: none;
     animation-name: appear;
     animation-duration: 1.5s;
     text-align: center;
@@ -111,6 +112,7 @@ a {
       letter-spacing: 0.08em;
       border: 1px solid #9A908B;
       margin: 1rem 0;
+      outline-color: #948D8B;
     }
 
     & p {
@@ -142,10 +144,11 @@ a {
   display: flex;
   flex-direction: row;
   justify-content: center;
-  padding: 1rem 0;
+  padding: 1.5rem 0;
 
   &-box {
     margin: 0 1rem;
+    cursor: pointer;
 
     &__image {
       &--rock {
@@ -176,10 +179,14 @@ a {
   margin: 1rem auto;
   left: 50%;
   transform: translateX(-50%);
-  width: 136px;
-  height: 36px;
+  width: 13.6rem;
+  height: 3.6rem;
   background: #FFFFFF;
   border: 1px solid #9A908B;
+  font-family: Noto Serif JP;
+  font-size: 1.4rem;
+  cursor: pointer;
+  outline: none;
 }
 
 .results {
@@ -225,18 +232,6 @@ a {
   width: 100%;
   padding: 2.2rem 2.2rem 1rem 2.2rem;
   background: linear-gradient(360deg, #E5E5E5 75%, rgba(239, 243, 239, 0) 100%);
-
-  & button {
-    font-family: Noto Serif JP;
-    font-size: 1.4rem;
-    font-weight: normal;
-    font-size: 1.2rem;
-    letter-spacing: 0.08em;
-    text-decoration-line: underline;
-    padding-bottom: .5rem;
-    background-color: transparent;
-    border: none;
-  }
 }
 
 .statistics {
@@ -255,5 +250,57 @@ a {
     & p {
       display: inline-block;
     }
+  }
+
+  &__heart {
+    padding-left: .5rem;
+  }
+
+  &__button {
+    font-family: Noto Serif JP;
+    font-size: 1.4rem;
+    font-weight: normal;
+    font-size: 1.2rem;
+    letter-spacing: 0.08em;
+    text-decoration-line: underline;
+    padding-bottom: .5rem;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    outline: none;
+  }
+}
+
+.losing-section {
+  animation-name: appear;
+  animation-duration: 1.5s;
+}
+
+.losing-screen {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  &__header {
+    margin-top: 4.5rem;
+  }
+
+  &__image {
+    mix-blend-mode: multiply;
+    padding: 1.5rem 0;
+  }
+
+  &__button {
+    position: relative;
+    margin: 1rem auto;
+    width: 13.6rem;
+    height: 3.6rem;
+    background: #FFFFFF;
+    border: 1px solid #9A908B;
+    text-decoration: underline;
+    font-family: Noto Serif JP;
+    font-size: 1.4rem;
+    cursor: pointer;
+    outline: none;
   }
 }

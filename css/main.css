@@ -89,7 +89,8 @@ a {
     color: #999999;
     letter-spacing: 0.08em;
     border: 1px solid #9A908B;
-    margin: 1rem 0; }
+    margin: 1rem 0;
+    outline-color: #948D8B; }
   .header .instruction-section p {
     text-align: left; }
 
@@ -110,9 +111,10 @@ a {
   display: flex;
   flex-direction: row;
   justify-content: center;
-  padding: 1rem 0; }
+  padding: 1.5rem 0; }
   .select-box {
-    margin: 0 1rem; }
+    margin: 0 1rem;
+    cursor: pointer; }
     .select-box__image--rock {
       border: 1px solid #9791A8;
       box-shadow: 0px 0px 30px rgba(151, 145, 168, 0.25); }
@@ -131,10 +133,14 @@ a {
   margin: 1rem auto;
   left: 50%;
   transform: translateX(-50%);
-  width: 136px;
-  height: 36px;
+  width: 13.6rem;
+  height: 3.6rem;
   background: #FFFFFF;
-  border: 1px solid #9A908B; }
+  border: 1px solid #9A908B;
+  font-family: Noto Serif JP;
+  font-size: 1.4rem;
+  cursor: pointer;
+  outline: none; }
 
 .results {
   animation-name: appear;
@@ -170,16 +176,6 @@ a {
   width: 100%;
   padding: 2.2rem 2.2rem 1rem 2.2rem;
   background: linear-gradient(360deg, #E5E5E5 75%, rgba(239, 243, 239, 0) 100%); }
-  .statistics-footer button {
-    font-family: Noto Serif JP;
-    font-size: 1.4rem;
-    font-weight: normal;
-    font-size: 1.2rem;
-    letter-spacing: 0.08em;
-    text-decoration-line: underline;
-    padding-bottom: .5rem;
-    background-color: transparent;
-    border: none; }
 
 .statistics p {
   font-size: 1.4rem; }
@@ -192,3 +188,45 @@ a {
   align-items: center; }
   .statistics__lives p {
     display: inline-block; }
+
+.statistics__heart {
+  padding-left: .5rem; }
+
+.statistics__button {
+  font-family: Noto Serif JP;
+  font-size: 1.4rem;
+  font-weight: normal;
+  font-size: 1.2rem;
+  letter-spacing: 0.08em;
+  text-decoration-line: underline;
+  padding-bottom: .5rem;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  outline: none; }
+
+.losing-section {
+  animation-name: appear;
+  animation-duration: 1.5s; }
+
+.losing-screen {
+  display: flex;
+  flex-direction: column;
+  align-items: center; }
+  .losing-screen__header {
+    margin-top: 4.5rem; }
+  .losing-screen__image {
+    mix-blend-mode: multiply;
+    padding: 1.5rem 0; }
+  .losing-screen__button {
+    position: relative;
+    margin: 1rem auto;
+    width: 13.6rem;
+    height: 3.6rem;
+    background: #FFFFFF;
+    border: 1px solid #9A908B;
+    text-decoration: underline;
+    font-family: Noto Serif JP;
+    font-size: 1.4rem;
+    cursor: pointer;
+    outline: none; }

@@ -27,7 +27,7 @@ const gameSection = document.querySelector(".game-section");
 const statSection = document.querySelector(".statistics-footer")
 const resultsSection = document.querySelector(".results")
 const scoreSection = document.querySelector(".scores")
-const scoresBtn = document.querySelector(".scores-activator");
+const scoresBtn = document.querySelector(".statistics__button");
 
 function playerNameCreator(e) {
   e.preventDefault();

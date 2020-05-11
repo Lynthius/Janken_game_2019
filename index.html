@@ -88,8 +88,12 @@
 			</div>
 	</div>
 	</section>
-	<section class="lose-section">
-		
+	<section class="losing-section" style="display:none;"> 
+		<div class="losing-screen">
+			<h2 class="losing-screen__header">You loose.</h2>
+			<img src="./img/face.svg" alt="" class="losing-screen__image">
+			<button class="losing-screen__button">Try again</button>
+		</div>
 	</section>
 
 	<footer class="statistics-footer">
@@ -97,12 +101,12 @@
 			<p class="statistics__prize">Prize: <span data-option="prize">0</span> ¥</p>
 			<div class="statistics__lives">
 				<p>Lives: <span data-option="lives">3</span></p>
-				<img src="./img/heart.svg" alt="" class="heart">
-				<img src="./img/heart.svg" alt="" class="heart">
-				<img src="./img/heart.svg" alt="" class="heart">
+				<span><img src="./img/heart.svg" alt="" class="statistics__heart"></span>
+				<span><img src="./img/heart.svg" alt="" class="statistics__heart"></span>
+				<span><img src="./img/heart.svg" alt="" class="statistics__heart"></span>
 			</div>
 		</div>
-		<button class="scores-activator">Game scores &gt;</button>
+		<button class="statistics__button">Game scores &gt;</button>
 	</footer>
 
 	<script src="./js/main.js"></script>

@@ -74,7 +74,8 @@ a {
 .header .instruction-section {
   animation-name: appear;
   animation-duration: 1.5s;
-  text-align: center; }
+  text-align: center;
+  padding-bottom: 1.2rem; }
   .header .instruction-section__header {
     font-family: Noto Serif JP;
     font-style: normal;
@@ -224,7 +225,7 @@ a {
     margin-top: 4.5rem; }
   .losing-screen__image {
     mix-blend-mode: multiply;
-    padding: 1.5rem 0; }
+    padding: 1rem 0 1.5rem 0; }
   .losing-screen__button {
     position: relative;
     margin: 1rem auto;

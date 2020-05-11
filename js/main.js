@@ -24,10 +24,13 @@ const playerIntr = document.querySelector(".game-section__header");
 const playBtn = document.querySelector(".play-btn");
 const instructionSection = document.querySelector(".instruction-section");
 const gameSection = document.querySelector(".game-section");
-const statSection = document.querySelector(".statistics-footer")
-const resultsSection = document.querySelector(".results")
-const scoreSection = document.querySelector(".scores")
+const handSection = document.querySelector(".select");
+const statSection = document.querySelector(".statistics-footer");
+const resultsSection = document.querySelector(".results");
+const scoreSection = document.querySelector(".scores");
+const losingSection = document.querySelector(".losing-section");
 const scoresBtn = document.querySelector(".statistics__button");
+const losingBtn = document.querySelector(".losing-screen__button");
 const heartsContainer = document.querySelector(".hearts");
 
 function playerNameCreator(e) {
@@ -110,7 +113,11 @@ function checkForLives() {
     heartsContainer.appendChild(heart);
   }
   if (gameSummary.lives === 0) {
-    return alert("Ups, you lose!");
+    // gameSection.style.display = "none";
+    handSection.style.display = "none";
+    playerIntr.style.display = "none";
+    playBtn.style.display = "none";
+    losingSection.style.display = "block";
   };
 };
 
@@ -160,3 +167,9 @@ function startGame() {
 };
 
 playBtn.addEventListener("click", startGame);
+
+function startAgain() {
+  location.reload();
+};
+
+losingBtn.addEventListener("click", startAgain);

@@ -1,0 +1,268 @@
+/* Base styles
+--------------------------------------------------------------------------- */
+/* 
+Apply a natural box layout to all elements, but allowing components to change. 
+https://css-tricks.com/box-sizing/ 
+*/
+html {
+  box-sizing: border-box;
+  font-size: 62.5%;
+  scroll-behavior: smooth;
+  /* font size 62.5% is equal to 10px (use rem units below) */
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+@keyframes appear {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 100%;
+  }
+}
+
+body {
+  padding: 0;
+  margin: 0;
+  font-family: Noto Serif JP;
+  font-size: 1.6rem;
+  background: #E5E5E5;
+}
+
+img {
+  max-width: 100%;
+}
+
+h1,
+h2 {
+  font-family: adobe-jenson-pro-display, serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+p {
+  // line-height: 3rem;
+  font-family: Noto Serif JP;
+  font-weight: 300;
+  font-size: 1.2rem;
+  line-height: 3.2rem;
+  letter-spacing: 0.08em;
+  margin: 0;
+}
+
+a {
+  font-family: Noto Serif JP;
+  color: #000;
+  text-decoration: none;
+}
+
+/* Styles and media queries
+---------------------------------------------------------------------- */
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  margin: 0 2.2rem;
+}
+
+.header {
+  &__image {
+    width: 100vw;
+  }
+
+  &__title {
+    font-size: 3.6rem;
+    // border: 1px solid magenta;
+    margin-bottom: .5rem;
+  }
+
+  &__paragraph {
+    font-family: adobe-jenson-pro-display, serif;
+    font-weight: 300;
+    font-size: 1.8rem;
+    margin-top: .5rem;
+    letter-spacing: 0.08em;
+    // border: 1px solid magenta;
+  }
+
+  .instruction-section {
+    display: none;
+    animation-name: appear;
+    animation-duration: 1.5s;
+    text-align: center;
+    // border: 1px red solid;
+
+    &__header {
+      font-family: Noto Serif JP;
+      font-style: normal;
+      font-weight: 600;
+      font-size: 1.4rem;
+      letter-spacing: 0.08em;
+      margin-top: 2rem;
+    }
+
+    & input {
+      min-width: 26.6rem;
+      height: 3.6rem;
+      padding: 1rem;
+      background: #FFFFFF;
+      color: #999999;
+      letter-spacing: 0.08em;
+      border: 1px solid #9A908B;
+    }
+
+    & div {
+      margin: 1.5rem 3.5rem 10rem 3.5rem;
+    }
+
+    & p {
+      text-align: left;
+    }
+  }
+}
+
+// @media only screen and (min-width: 992px) {
+// }
+
+.game-section {
+  // display: none;
+  animation-name: appear;
+  animation-duration: 1.5s;
+
+  &__header {
+    text-align: center;
+    font-family: Noto Serif JP;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 1.4rem;
+    letter-spacing: 0.08em;
+    margin-top: 2rem;
+  }
+}
+
+.select {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  // border: 1px solid salmon;
+  padding: 1rem 0;
+
+  &-box {
+    margin: 0 1rem;
+
+    &__image {
+      &--rock {
+        border: 1px solid #9791A8;
+        box-shadow: 0px 0px 30px rgba(151, 145, 168, 0.25);
+      }
+
+      &--paper {
+        border: 1px solid #948D8B;
+        box-shadow: 0px 0px 30px rgba(151, 144, 142, 0.25);
+      }
+
+      &--scissors {
+        border: 1px solid #DF6A6F;
+        box-shadow: 0px 0px 30px rgba(226, 125, 128, 0.25);
+      }
+    }
+
+    &__name {
+      text-align: center;
+      font-size: 1.8rem;
+    }
+  }
+}
+
+.play-btn {
+  position: relative;
+  margin: 1rem auto;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 136px;
+  height: 36px;
+  background: #FFFFFF;
+  border: 1px solid #9A908B;
+}
+
+.results {
+  // display: none;
+  animation-name: appear;
+  animation-duration: 1.5s;
+  margin-bottom: 10rem;
+}
+
+.scores {
+  display: none;
+  animation-name: appear;
+  animation-duration: 1.5s;
+  margin-bottom: 10rem;
+}
+
+.item {
+  display: flex;
+  justify-content: space-between;
+
+  &__filler {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+
+    &:after {
+      content: " ....................................................................................................."
+    }
+
+    &__value {
+      flex-shrink: 0;
+    }
+  }
+}
+
+.statistics-footer {
+  position: fixed;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 2.2rem 2.2rem 1rem 2.2rem;
+  background: linear-gradient(360deg, #E5E5E5 75%, rgba(239, 243, 239, 0) 100%);
+
+  & button {
+    font-family: Noto Serif JP;
+    font-size: 1.4rem;
+    font-weight: normal;
+    font-size: 1.2rem;
+    letter-spacing: 0.08em;
+    text-decoration-line: underline;
+    padding-bottom: .5rem;
+    background-color: transparent;
+    border: none;
+  }
+}
+
+.statistics {
+  & p {
+    font-size: 1.4rem;
+  }
+
+  & span {
+    font-weight: 600;
+  }
+
+  &__lives {
+    display: flex;
+    align-items: center;
+
+    & p {
+      display: inline-block;
+    }
+  }
+}

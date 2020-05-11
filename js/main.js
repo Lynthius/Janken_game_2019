@@ -17,7 +17,7 @@ const game = {
   compHand: "",
 };
 
-const hands = [...document.querySelectorAll(".select-container img")];
+const hands = [...document.querySelectorAll(".select img")];
 const input = document.querySelector("input");
 const nameBtn = document.querySelector(".name-btn");
 const playerIntr = document.querySelector(".introduction");
@@ -29,18 +29,18 @@ function playerNameCreator(e) {
   input.value = "";
 };
 
-nameBtn.addEventListener("click", playerNameCreator)
+input.addEventListener("submit", playerNameCreator)
 
 function showIntroduction() {
   playerIntr.textContent = `Choose your destiny ${playerName.name}-san...`;
 };
 
-nameBtn.addEventListener("click", showIntroduction)
+input.addEventListener("submit", showIntroduction)
 
 function handSelector(e) {
   game.playerHand = e.target.dataset.option
-  hands.forEach(hand => hand.style.boxShadow = "");
-  e.target.style.boxShadow = "0 0 0 4px yellow";
+  hands.forEach(hand => hand.className = "select-box__image");
+  e.target.className = `${e.target.className}--${e.target.dataset.option}`;
 };
 
 hands.forEach(hand => hand.addEventListener("click", handSelector));

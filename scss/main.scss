@@ -158,19 +158,19 @@ a {
       &--rock {
         max-width: 8.6rem;
         border: 1px solid #9791A8;
-        box-shadow: 0px 0px 30px rgba(151, 145, 168, 0.25);
+        box-shadow: 0px 0px 30px rgba(151, 145, 168, 0.5);
       }
 
       &--paper {
         max-width: 8.6rem;
         border: 1px solid #948D8B;
-        box-shadow: 0px 0px 30px rgba(151, 144, 142, 0.25);
+        box-shadow: 0px 0px 30px rgba(151, 144, 142, 0.5);
       }
 
       &--scissors {
         max-width: 8.6rem;
         border: 1px solid #DF6A6F;
-        box-shadow: 0px 0px 30px rgba(226, 125, 128, 0.25);
+        box-shadow: 0px 0px 30px rgba(226, 125, 128, 0.5);
       }
     }
 

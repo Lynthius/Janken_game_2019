@@ -35,7 +35,8 @@ h1,
 h2 {
   font-family: adobe-jenson-pro-display, serif;
   font-weight: 400;
-  font-style: normal; }
+  font-style: normal;
+  letter-spacing: 0.08em; }
 
 p {
   font-family: Noto Serif JP;
@@ -62,8 +63,14 @@ a {
   background-position-y: top;
   background-size: initial; }
 
+@media only screen and (min-width: 994px) {
+  .wrapper {
+    padding: 0; } }
+
 .header__image {
   width: 100vw; }
+  .header__image--desktop {
+    display: none; }
 
 .header__title {
   font-size: 3.6rem;
@@ -76,19 +83,66 @@ a {
   margin-top: .5rem;
   letter-spacing: 0.08em; }
 
-.header .instruction-section {
+@media only screen and (min-width: 994px) {
+  .header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    margin-top: 2.8rem;
+    flex-grow: 1; }
+    .header__title-container {
+      margin-left: -20rem;
+      text-align: left;
+      margin-bottom: 2rem; }
+    .header__title {
+      font-size: 5rem;
+      line-height: 6rem; }
+    .header__paragraph {
+      font-size: 2.4rem; }
+    .header__image {
+      display: none; }
+      .header__image--desktop {
+        display: block;
+        height: 100vh;
+        padding: 1.5rem 1.5rem 0; } }
+
+@media only screen and (min-width: 994px) and (min-width: 1694px) {
+  .header {
+    margin-top: 16.8rem; } }
+
+@media only screen and (min-width: 994px) {
+  .container-intro {
+    display: flex;
+    justify-content: space-between;
+    height: 100vh;
+    background: url("/img/flowers.png"), url("/img/title.png");
+    background-repeat: no-repeat;
+    background-position: 60%, 5%;
+    background-position-y: top;
+    background-size: initial; } }
+
+.instruction-section {
   animation-name: appear;
   animation-duration: 1.5s;
   text-align: center;
-  padding-bottom: 1.2rem; }
-  .header .instruction-section__header {
+  padding-bottom: 1.2rem;
+  display: flex;
+  flex-direction: column; }
+  .instruction-section__header {
     font-family: Noto Serif JP;
     font-style: normal;
     font-weight: 600;
     font-size: 1.4rem;
     letter-spacing: 0.08em; }
-  .header .instruction-section input {
-    min-width: 26.6rem;
+  .instruction-section__paragraphs {
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+    text-align: left; }
+  .instruction-section input {
+    width: 27.8rem;
+    align-self: center;
     height: 3.6rem;
     padding: 1rem;
     background: #FFFFFF;
@@ -97,11 +151,24 @@ a {
     border: 1px solid #9A908B;
     margin: 1rem 0;
     outline-color: #948D8B; }
-  .header .instruction-section p {
-    text-align: left; }
+
+@media only screen and (min-width: 994px) {
+  .instruction-section {
+    margin: 1.5rem 0; }
+    .instruction-section input {
+      max-width: 26.6rem;
+      height: 3.6rem;
+      padding: 1rem;
+      background: #FFFFFF;
+      color: #999999;
+      letter-spacing: 0.08em;
+      border: 1px solid #9A908B;
+      margin: 1rem 0;
+      outline-color: #948D8B; } }
 
 .game-section {
   display: none;
+  flex-direction: column;
   animation-name: appear;
   animation-duration: 1.5s; }
   .game-section__header {
@@ -112,6 +179,41 @@ a {
     font-size: 1.4rem;
     letter-spacing: 0.08em;
     margin-top: 2rem; }
+
+@media only screen and (min-width: 994px) {
+  .game-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    margin-top: 2rem;
+    flex-grow: 1;
+    animation-name: appear;
+    animation-duration: 1.5s; }
+    .game-section__title-container {
+      margin-left: -20rem;
+      text-align: left;
+      margin-bottom: 0; }
+    .game-section__title {
+      font-size: 5rem;
+      line-height: 6rem; }
+    .game-section__header {
+      margin-top: 4rem; } }
+
+@media only screen and (min-width: 1694px) {
+  .game-section {
+    margin-top: 16rem; } }
+
+@media only screen and (min-width: 994px) {
+  .container-game {
+    display: flex;
+    justify-content: space-between;
+    height: 100vh;
+    background: url("/img/flowers.png"), url("/img/title.png");
+    background-repeat: no-repeat;
+    background-position: 60%, 5%;
+    background-position-y: top;
+    background-size: initial; } }
 
 .select {
   display: flex;
@@ -142,10 +244,7 @@ a {
       font-size: 1.8rem; }
 
 .play-btn {
-  position: relative;
   margin: 1rem auto;
-  left: 50%;
-  transform: translateX(-50%);
   width: 13.6rem;
   height: 3.6rem;
   background: #FFFFFF;
@@ -165,6 +264,14 @@ a {
   animation-duration: 1.5s;
   margin-bottom: 10rem; }
 
+@media only screen and (min-width: 994px) {
+  .results {
+    max-width: 30rem;
+    margin-bottom: 0; }
+  .scores {
+    max-width: 30rem;
+    margin-bottom: 0; } }
+
 .item {
   display: flex;
   justify-content: space-between; }
@@ -173,7 +280,7 @@ a {
     text-overflow: ellipsis;
     white-space: nowrap; }
     .item__filler:after {
-      content: " ......................................................................................................................................................................................................................"; }
+      content: " ......................................................................................"; }
     .item__filler__value {
       flex-shrink: 0; }
 
@@ -190,6 +297,12 @@ a {
   padding: 2.2rem 2.2rem 1rem 2.2rem;
   background: linear-gradient(360deg, #E5E5E5 75%, rgba(239, 243, 239, 0) 100%); }
 
+@media only screen and (min-width: 994px) {
+  .statistics-footer {
+    flex-direction: column;
+    align-items: flex-start;
+    background: transparent; } }
+
 .statistics p {
   font-size: 1.4rem; }
 
@@ -199,15 +312,12 @@ a {
 .statistics__lives {
   display: flex;
   align-items: center; }
-  .statistics__lives p {
-    display: inline-block; }
 
 .statistics__heart {
   padding-left: .2rem; }
 
 .statistics__button {
   font-family: Noto Serif JP;
-  font-size: 1.4rem;
   font-weight: normal;
   font-size: 1.2rem;
   letter-spacing: 0.08em;
@@ -215,8 +325,13 @@ a {
   padding-bottom: .5rem;
   background-color: transparent;
   border: none;
-  cursor: pointer;
-  outline: none; }
+  outline: none;
+  cursor: pointer; }
+
+@media only screen and (min-width: 994px) {
+  .statistics__button {
+    font-size: 1.4rem;
+    padding-left: 0; } }
 
 .losing-section {
   animation-name: appear;
@@ -229,11 +344,10 @@ a {
   .losing-screen__header {
     margin-top: 4.5rem; }
   .losing-screen__image {
-    mix-blend-mode: multiply;
-    padding: 1rem 0 1.5rem 0; }
+    padding: 1rem 0 2rem 0; }
   .losing-screen__button {
     position: relative;
-    margin: 1rem auto;
+    margin: 1.5rem auto;
     width: 13.6rem;
     height: 3.6rem;
     background: #FFFFFF;

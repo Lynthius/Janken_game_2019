@@ -23,7 +23,9 @@ const nameBtn = document.querySelector(".name-btn");
 const playerIntr = document.querySelector(".game-section__header");
 const playBtn = document.querySelector(".play-btn");
 const instructionSection = document.querySelector(".instruction-section");
+const instructionContainer = document.querySelector(".container-intro");
 const gameSection = document.querySelector(".game-section");
+const gameContainer = document.querySelector(".container-game");
 const handSection = document.querySelector(".select");
 const statSection = document.querySelector(".statistics-footer");
 const resultsSection = document.querySelector(".results");
@@ -44,8 +46,14 @@ instructionSection.addEventListener("submit", playerNameCreator)
 function showIntroduction() {
   playerIntr.textContent = `Choose your destiny ${playerName.name}-san...`;
   instructionSection.style.display = "none";
-  gameSection.style.display = "block";
+  instructionContainer.style.display = "none";
+  gameSection.style.display = "flex";
   statSection.style.display = "flex";
+  if (window.innerWidth >= 994) {
+    gameContainer.style.display = "flex";
+  } else {
+    gameContainer.style.display = "block";
+  };
 };
 
 instructionSection.addEventListener("submit", showIntroduction)

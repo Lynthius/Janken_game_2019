@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /* Base styles
 --------------------------------------------------------------------------- */
 /* 
@@ -250,9 +251,14 @@ a {
   background: #FFFFFF;
   border: 1px solid #9A908B;
   font-family: Noto Serif JP;
+  font-weight: 600;
   font-size: 1.4rem;
   cursor: pointer;
   outline: none; }
+  .play-btn:hover span {
+    display: none; }
+  .play-btn:hover:before {
+    content: "ぽん!"; }
 
 .results {
   animation-name: appear;

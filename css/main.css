@@ -58,7 +58,7 @@ a {
   display: flex;
   flex-direction: column;
   padding: 2.2rem 2.2rem 0;
-  background: url("/img/flowers.png"), url("/img/title.png");
+  background: url("img/flowers.png"), url("img/title.png");
   background-repeat: no-repeat;
   background-position: right, 5%;
   background-position-y: top;
@@ -118,7 +118,7 @@ a {
     display: flex;
     justify-content: space-between;
     height: 100vh;
-    background: url("/img/flowers.png"), url("/img/title.png");
+    background: url("img/flowers.png"), url("img/title.png");
     background-repeat: no-repeat;
     background-position-x: 60%, 5%;
     background-position-y: top, 15%;
@@ -211,7 +211,7 @@ a {
     display: flex;
     justify-content: space-between;
     height: 100vh;
-    background: url("/img/flowers.png"), url("/img/title.png");
+    background: url("img/flowers.png"), url("img/title.png");
     background-repeat: no-repeat;
     background-position-x: 60%, 5%;
     background-position-y: top, 15%;

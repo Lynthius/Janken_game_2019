@@ -330,12 +330,17 @@ a {
   font-size: 1.4rem;
   cursor: pointer;
   outline: none;
+}
 
-  &:hover span {
-    display: none;
-  }
-  &:hover:before {
-    content: "ぽん!";
+@media only screen and (min-width: 994px) {
+  .play-btn {
+    &:hover span {
+      display: none;
+    }
+
+    &:hover:before {
+      content: "ぽん!";
+    }
   }
 }
 

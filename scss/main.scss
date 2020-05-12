@@ -80,6 +80,7 @@ a {
 @media only screen and (min-width: 994px) {
   .wrapper {
     padding: 0;
+    background: none;
   }
 }
 
@@ -153,8 +154,8 @@ a {
     height: 100vh;
     background: url('/img/flowers.png'), url('/img/title.png');
     background-repeat: no-repeat;
-    background-position: 60%, 5%;
-    background-position-y: top;
+    background-position-x: 60%, 5%;
+    background-position-y: top, 15%;
     background-size: initial;
   }
 }
@@ -272,8 +273,8 @@ a {
     height: 100vh;
     background: url('/img/flowers.png'), url('/img/title.png');
     background-repeat: no-repeat;
-    background-position: 60%, 5%;
-    background-position-y: top;
+    background-position-x: 60%, 5%;
+    background-position-y: top, 15%;
     background-size: initial;
   }
 }

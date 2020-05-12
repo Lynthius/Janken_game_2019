@@ -32,7 +32,7 @@ body {
   margin: 0;
   font-family: Noto Serif JP;
   font-size: 1.6rem;
-  background: #E5E5E5;
+  background: #EFF3EF;
 }
 
 img {
@@ -68,7 +68,12 @@ a {
 .wrapper {
   display: flex;
   flex-direction: column;
-  margin: 2.2rem 2.2rem 0;
+  padding: 2.2rem 2.2rem 0;
+  background: url('/img/flowers.png'), url('/img/title.png');
+  background-repeat: no-repeat;
+  background-position: right, 5%;
+  background-position-y: top;
+  background-size: initial;
 }
 
 .header {
